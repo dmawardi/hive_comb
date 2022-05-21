@@ -1,0 +1,13 @@
+{% extends 'layout.html' %} {% load static %}
+
+<!-- CSS -->
+{% block css_files %}
+<link rel="stylesheet" href="{% static 'blog/projects.css' %}" />
+{% endblock %}
+<!-- Page Title -->
+{% block page_title %} HiveComb Blog Home {% endblock %}
+<!-- Page Content -->
+{% block page_content %}
+<!-- Header -->
+{% comment %} {% include "challenges/includes/header.html" %} {% endcomment %}
+{% endblock %}

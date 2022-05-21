@@ -1,0 +1,14 @@
+{% extends 'layout.html' %} {% load static %}
+
+<!-- CSS -->
+{% block css_files %}
+<link rel="stylesheet" href="{% static 'blog/project-post.css' %}" />
+{% endblock %}
+<!-- Page title -->
+{% block page_title %} HiveComb: {{blogId}} {% endblock %}
+<!-- Page content -->
+{% block page_content %}
+<!-- Header -->
+{% comment %} {% include "challenges/includes/header.html" %} {% endcomment %}
+<h1>Specific Post: {{blogId}}</h1>
+{% endblock %}
