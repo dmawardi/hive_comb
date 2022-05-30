@@ -5,10 +5,22 @@
 <link rel="stylesheet" href="{% static 'blog/project-post.css' %}" />
 {% endblock %}
 <!-- Page title -->
-{% block page_title %} HiveComb: {{blogId}} {% endblock %}
+{% block page_title %} HiveComb: {{post.title}} {% endblock %}
 <!-- Page content -->
 {% block page_content %}
 <!-- Header -->
 {% comment %} {% include "challenges/includes/header.html" %} {% endcomment %}
-<h1>Specific Post: {{blogId}}</h1>
+<h1>Specific Post: {{slug}}</h1>
+<section id="summary">
+  <h2>{{project.title}}</h2>
+  <article>
+    <img
+      src="{% static 'blog/images/'|add:project.image %}"
+      alt="{{project.title}}"
+    />
+    <address>By {{project.author}}</address>
+    <div>Last updated on <time>{{ project.date|date:"d M y" }}</time></div>
+  </article>
+</section>
+<main>{{project.content|linebreaks}}</main>
 {% endblock %}

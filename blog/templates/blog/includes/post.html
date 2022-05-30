@@ -1,0 +1,20 @@
+{% load static %}
+
+<li>
+  <article class="post">
+    <!-- Link with dynamic slug -->
+    <a href={% url 'project-detail' project.slug %}>
+      <!-- img tag with dynamic portion -->
+      <img
+        src="{% static 'blog/images/'|add:project.image %}"
+        alt="{{project.title}}"
+      />
+      <div class="post__content">
+        <h3>{{project.title}}</h3>
+        <p>
+          {{project.excerpt}}
+        </p>
+      </div>
+    </a>
+  </article>
+</li>

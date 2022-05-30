@@ -13,6 +13,13 @@
     {% block css_files %}{% endblock %}
   </head>
   <body>
+    <header id="main-navigation">
+      <h1><a href={% url 'index' %}>HiveComb</a></h1>
+      <nav>
+          <a href={% url 'projects-home' %}>All Posts</a>
+      </nav>
+  </header>
+  <!-- Content-->
     {% block page_content %} {% endblock %}
   </body>
 </html>

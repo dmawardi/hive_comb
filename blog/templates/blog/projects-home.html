@@ -3,11 +3,23 @@
 <!-- CSS -->
 {% block css_files %}
 <link rel="stylesheet" href="{% static 'blog/projects.css' %}" />
+<link rel="stylesheet" href="{% static 'blog/includes/post.css' %}" />
+
 {% endblock %}
 <!-- Page Title -->
-{% block page_title %} HiveComb Blog Home {% endblock %}
+{% block page_title %} HiveComb All Projects {% endblock %}
 <!-- Page Content -->
 {% block page_content %}
-<!-- Header -->
+<section id="all-projects">
+  <h2>Our Projects</h2>
+  <ul>
+    <!-- Iterate over latest projects -->
+    {% for project in projects %}
+    <!-- Latest project buttons -->
+    {% include "blog/includes/post.html" %}
+    <!-- End For -->
+    {% endfor %}
+  </ul>
+</section>
 {% comment %} {% include "challenges/includes/header.html" %} {% endcomment %}
 {% endblock %}
