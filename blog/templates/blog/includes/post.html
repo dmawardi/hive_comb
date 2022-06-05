@@ -6,7 +6,7 @@
     <a href={% url 'project-detail' project.slug %}>
       <!-- img tag with dynamic portion -->
       <img
-        src="{% static 'blog/images/'|add:project.image %}"
+        src="{% static 'blog/images/'|add:project.image_name %}"
         alt="{{project.title}}"
       />
       <div class="post__content">

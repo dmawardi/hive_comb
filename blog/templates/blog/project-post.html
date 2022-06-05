@@ -13,12 +13,20 @@
 <h1>Specific Post: {{slug}}</h1>
 <section id="summary">
   <h2>{{project.title}}</h2>
+  <div>
+    {% for tag in project_tags %}
+    <!-- caption -->
+    <span class="tag"> {{tag.caption}} </span>
+    {% endfor %}
+  </div>
   <article>
     <img
-      src="{% static 'blog/images/'|add:project.image %}"
+      src="{% static 'blog/images/'|add:project.image_name %}"
       alt="{{project.title}}"
     />
-    <address>By {{project.author}}</address>
+    <address>
+      By <a href="mailto:{{project.author.email}}">{{project.author}}</a>
+    </address>
     <div>Last updated on <time>{{ project.date|date:"d M y" }}</time></div>
   </article>
 </section>
